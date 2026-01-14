@@ -95,20 +95,20 @@
                 <input type="text" id="datadopedido" name="datadopedido"
                   readonly aria-readonly="true" inputmode="none" />
               </div>
-              <div class="field">
-                <label for="horasInspecao">Horas de inspeção</label>
-                <input type="text" id="horasInspecao" name="horasInspecao" placeholder="Ex.: 2h 30min" />
+             <div class="field">
+                <label for="dataemissão">Data da Emissão</label>
+                <input type="date" id="dataemissão" name="dataemissão" required />
               </div>
               <div class="field">
-                <label for="dataRelatorio">Data</label>
-                <input type="date" id="dataRelatorio" name="dataRelatorio" required />
+                <label for="dataentrega">Data de Entrega</label>
+                <input type="date" id="dataentrega" name="dataentrega" required />
               </div>
             </div>
           </fieldset>
 
           <!-- Produtos -->
           <fieldset>
-            <legend>Produtos Inspecionados</legend>
+            <legend>Produtos</legend>
             <table id="tabelaProdutos">
               <colgroup>
                 <col style="width: 38%" />
@@ -119,10 +119,9 @@
               </colgroup>
               <thead>
                 <tr>
-                  <th scope="col">Produto</th>
-                  <th scope="col">Lote</th>
-                  <th scope="col">Data</th>
+                  <th scope="col">Produto</th>                                  
                   <th scope="col">Quantidade</th>
+                  <th scope="col">Lote</th>  
                   <th scope="col">Ação</th>
                 </tr>
               </thead>
@@ -132,16 +131,18 @@
                     <input type="search" name="descricao[]" list="produtosSug" required placeholder="Produto"
                       autocomplete="on" />
                     <datalist id="produtosSug">
-                      <option value="Tubo PVC DN75" />
-                      <option value="Conector 90º DN50" />
-                      <option value="Anel de Vedação EPDM" />
+                      <option value="Tubo PVC ESG 100 MM" />
+                      <option value="Tubo PVC ESG LEVE 250 MM" />
+                      <option value="Tubo PVC ESG LEVE 300 MM" />
+                      <option value="Tubo PVC SERIE R 100 MM "/>
+                      <option value="Tubo PVC PBA CL 20 JEI DN 75 DE 85"/>
+                      <option value="Tubo PVC COLETOR ESG JEI 100 MM"/>
                     </datalist>
                   </td>
                   <td>
                     <input type="text" name="lote[]" placeholder="Ex.: L2025-09" autocapitalize="characters"
                       pattern="^[A-Za-z0-9_-]{1,}$" />
-                  </td>
-                  <td><input type="date" name="data[]" /></td>
+                  </td>              
                   <td><input type="number" name="quantidade[]" min="1" step="1" inputmode="numeric" /></td>
                   <td><button type="button" class="remover" aria-label="Remover linha">❌</button></td>
                 </tr>
@@ -154,7 +155,7 @@
 
           <!-- Ensaios -->
           <fieldset>
-            <legend>Ensaios Realizados</legend>
+            <legend>Verificação</legend>
             <table id="tabelaEnsaios">
               <colgroup>
                 <col style="width: 30%" />
@@ -165,9 +166,7 @@
               </colgroup>
               <thead>
                 <tr>
-                  <th scope="col">Ensaio</th>
-                  <th scope="col">Amostras</th>
-                  <th scope="col">Método</th>
+                  <th scope="col">Verificação</th>                  
                   <th scope="col">Resultado</th>
                   <th scope="col">Ação</th>
                 </tr>
@@ -175,10 +174,10 @@
               <tbody>
                 <tr>
                   <td>
-                    <select name="ensaio[]" required>
+                    <select name="verificação[]" required>
                       <option value="">Selecione...</option>
-                      <option value="phi">Pressão hidrostática (PHI)</option>
-                      <option value="vacuo">Vácuo</option>
+                      <option value="quantidade">A Quantidade está conforme o pedido?</option>
+                      <option value="prazo">O prazo de entrega está conforme combinado?</option>
                       <option value="dimensional">Dimensional</option>
                       <option value="marcacoes">Marcações</option>
                       <option value="achatamento">Achatamento</option>
