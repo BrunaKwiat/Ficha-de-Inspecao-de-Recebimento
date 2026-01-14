@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>RQ-504-01 — Registro de Inspeção</title>
+  <title>RQ-504-01 — Ficha de Inspeção de Recebimento</title>
   <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#0E3554" />
 
@@ -35,7 +35,7 @@
       <div class="brand">
         <img src="shiva.png" alt="Shiva Conexões — Logo" />
         <div class="brand-text">
-          <h1 class="brand-title">RQ-504-01 — Registro de Inspeção</h1>
+          <h1 class="brand-title">RQ-504-01 — Ficha de Inspeção de Recebimento</h1>
         </div>
       </div>
 
@@ -81,19 +81,18 @@
             <legend>Identificação</legend>
             <div class="grid-identificacao">
               <div class="field short">
-                <label for="ordemProducao">Nº da Ficha de Produção</label>
-                <input type="text" id="ordemProducao" name="ordemProducao" required inputmode="numeric"
+                <label for="notafiscal">Nº Nota Fiscal</label>
+                <input type="text" id="notafiscal" name="notafiscal" required inputmode="numeric"
                   pattern="^[0-9]{1,}$" autocomplete="off" placeholder="Ex.: 000123" />
               </div>
               <div class="field">
-                <label for="quantidadeaverificar">Quantidade a verificar</label>
-                <input type="text" id="quantidadeaverificar" name="quantidadeaverificar"
-                  value="Acima de 500 peças verificar o plano de amostragem." readonly aria-readonly="true"
+                <label for="fornecedor">Fornecedor</label>
+                <input type="text" id="fornecedor" name="fornecedor"
                   inputmode="none" />
               </div>
               <div class="field">
-                <label for="quandoexecutarinspecao">Quando executar a inspeção</label>
-                <input type="text" id="quandoexecutarinspecao" name="quandoexecutarinspecao" value="Peças acabadas"
+                <label for="datadopedido">N° e data do Pedido OC:</label>
+                <input type="text" id="datadopedido" name="datadopedido"
                   readonly aria-readonly="true" inputmode="none" />
               </div>
               <div class="field">
